@@ -26,6 +26,7 @@ class HomeController extends AbstractController
         $serie->setLastAirDate(new \DateTime('2015-05-06'));
         $serie->setDateCreated(new \DateTime());
         $serie->setVote(7.5);
+        //entityManager
 
         $em->persist($serie);
         $em->flush();
