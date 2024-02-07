@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>List de series</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Overview</th>
+            <th>Status</th>
+            <th>Vote</th>
+            <th>Genre</th>
+            <th>First air date</th>
+            <th>Last air daite</th>
+        </tr>
+        </thead>
+        <tbody>
+    {% for serie in series %}
+        <tr>
+            <td>
+                {{ serie.name }}
+            </td>
+            <td>
+                {{ serie.overview }}
+            </td>
+            <td>
+                {{ serie.status }}
+            </td>
+            <td>
+                {{ serie.vote }}
+            </td>
+            <td>
+                {{ serie.genres }}
+            </td>
+            <td>
+                {{ serie.firstAirDate|date('d/m/Y') }}
+            </td>
+            <td>
+                {{ serie.lastAirDate|date('d/m/Y') }}
+            </td>
+        </tr>
+
+    {% endfor %}
+        </tbody>
+    </table>
+
+
+{%  endblock %}
