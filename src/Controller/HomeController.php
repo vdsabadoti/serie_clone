@@ -27,6 +27,7 @@ class HomeController extends AbstractController
         $serie->setDateCreated(new \DateTime());
         $serie->setVote(7.5);
         //entityManager
+        //I can change this file and then upload remote
 
         $em->persist($serie);
         $em->flush();
