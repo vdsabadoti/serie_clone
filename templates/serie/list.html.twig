@@ -13,6 +13,7 @@
             <th>Genre</th>
             <th>First air date</th>
             <th>Last air daite</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -38,6 +39,9 @@
             </td>
             <td>
                 {{ serie.lastAirDate|date('d/m/Y') }}
+            </td>
+            <td>
+                <a href="{{ path('app_series_detail', {'id' : serie.id }) }}">Detail</a>
             </td>
         </tr>
 

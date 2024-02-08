@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Detail d'une série</h1>
+
+    <p>Nom : {{ serie.name }}</p>
+    <p>First air date : {{ serie.firstAirDate|date('d/m/Y') }}</p>
+{%  endblock %}

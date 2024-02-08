@@ -7,9 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/series', name : 'app_series')]
 class SerieController extends AbstractController
 {
-    #[Route('/series', name: 'app_series')]
+    #[Route('/list', name: '_list')]
     public function list(SerieRepository $serieRepository): Response
     {
         $list = $serieRepository->findAll();
@@ -17,4 +18,14 @@ class SerieController extends AbstractController
             'series' => $list
         ]);
     }
+
+    #[Route('/detail/{id}', name : '_detail', requirements: ['id' => '\d+'])]
+    public function detail(int $id, SerieRepository $serieRepository) : Response
+    {
+        $serie = $serieRepository->find($id);
+        return $this->render('serie/detail.html.twig', [
+            'serie' => $serie
+        ]);
+    }
+
 }
